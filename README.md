@@ -9,7 +9,7 @@
 [![Twitter @drewag](https://img.shields.io/badge/Twitter-@drewag-blue.svg?style=flat)](http://twitter.com/drewag)
 [![Blog drewag.me](https://img.shields.io/badge/Blog-drewag.me-blue.svg?style=flat)](http://drewag.me)
 
-Library for common enhancements for Command-Line usage of the Swift language with support for macOS, and Linux. It also includes [Swiftlier](https://github.com/drewag/Swiftlier) for enhancements to Swift itself.**
+**Library for common enhancements for Command-Line usage of the Swift language with support for macOS, and Linux. It also includes [Swiftlier](https://github.com/drewag/Swiftlier) for enhancements to Swift itself.**
 
 Goals
 =====
