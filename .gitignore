@@ -1,0 +1,9 @@
+.DS_Store
+*.swp
+*.swo
+*xcuserdata/
+src/
+.build/
+build/
+SwiftlierCLI.xcodeproj/
+Package.resolved

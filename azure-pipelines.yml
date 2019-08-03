@@ -1,0 +1,15 @@
+trigger:
+- master
+
+jobs:
+- job: SwiftPM
+  pool:
+    vmImage: 'macos-latest'
+  steps:
+  - script: Tests/test_swiftpm.sh
+- job: Linux
+  pool:
+    vmImage: 'Ubuntu 16.04'
+  container: norionomura/swift:501
+  steps:
+  - script: Tests/test_swiftpm.sh
