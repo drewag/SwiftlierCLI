@@ -9,10 +9,11 @@ let package = Package(
         .library(name: "SwiftlierCLI", targets: ["SwiftlierCLI"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/drewag/Swiftlier.git", from: "5.3.0"),
+        .package(url: "https://github.com/drewag/Swiftlier.git", from: "6.0.0"),
+        .package(url: "https://github.com/malcommac/SwiftDate.git", from: "6.0.0"),
     ],
     targets: [
-        .target(name: "SwiftlierCLI", dependencies: ["Swiftlier"]),
+        .target(name: "SwiftlierCLI", dependencies: ["Swiftlier", "SwiftDate"]),
         .testTarget(name: "SwiftlierCLITests", dependencies: ["SwiftlierCLI"]),
     ]
 )

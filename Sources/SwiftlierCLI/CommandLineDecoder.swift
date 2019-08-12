@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 public class CommandLineDecoder: Decoder {
     public class func prompt<D: Decodable>(defaults: [String:String] = [:], userInfo: [CodingUserInfoKey:Any] = [:]) throws -> D {
@@ -130,7 +131,7 @@ private class CommandLineDecodingContainer<MyKey: CodingKey>: KeyedDecodingConta
     func decode<T>(_ type: T.Type, forKey key: Key) throws -> T where T: Swift.Decodable {
         if type == Date.self {
             return self.promptForValue(withName: key.stringValue, create: { input in
-                return input.date ?? input.railsDateTime ?? input.railsDate ?? input.iso8601DateTime
+                return input.toDate()
             }, errorString: "Invalid date/time") as! T
         }
         else {
@@ -222,7 +223,7 @@ private extension CommandLineDecodingContainer {
                 return input.data(using: .utf8) as? Value
             }
             else if Value.self == Date.self {
-                guard let value = input.date ?? input.railsDateTime ?? input.railsDate ?? input.iso8601DateTime else {
+                guard let value = input.toDate() else {
                     print("Invalid date/time")
                     continue
                 }
